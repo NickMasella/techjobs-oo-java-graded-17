@@ -35,6 +35,7 @@ public class Job {
     @Override
     public String toString() {
 
+
         String jobString = "\nID: " + id;
         if (name.isEmpty()){
             jobString += "\nName: Data not available";
