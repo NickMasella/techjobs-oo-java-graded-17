@@ -34,35 +34,37 @@ public class Job {
 
     @Override
     public String toString() {
-
-
-        String jobString = "\nID: " + id;
-        if (name.isEmpty()){
-            jobString += "\nName: Data not available";
-        } else{
-            jobString += "\nName: "+ name;
+        if(employer.getValue().isEmpty()&& location.getValue().isEmpty() && positionType.getValue().isEmpty() && coreCompetency.getValue().isEmpty()){
+            return "OOPS! This job does not seem to exist.";
+        } else {
+            String jobString = "\nID: " + id;
+            if (name.isEmpty()) {
+                jobString += "\nName: Data not available";
+            } else {
+                jobString += "\nName: " + name;
+            }
+            if (employer.getValue().isEmpty()) {
+                jobString += "\nEmployer: Data not available";
+            } else {
+                jobString += "\nEmployer: " + employer;
+            }
+            if (location.getValue().isEmpty()) {
+                jobString += "\nLocation: Data not available";
+            } else {
+                jobString += "\nLocation: " + location;
+            }
+            if (positionType.getValue().isEmpty()) {
+                jobString += "\nPosition Type: Data not available";
+            } else {
+                jobString += "\nPosition Type: " + positionType;
+            }
+            if (coreCompetency.getValue().isEmpty()) {
+                jobString += "\nCore Competency: Data not available" + "\n";
+            } else {
+                jobString += "\nCore Competency: " + coreCompetency + "\n";
+            }
+            return jobString;
         }
-        if (employer.toString().isEmpty()){
-            jobString += "\nEmployer: Data not available";
-        }else{
-            jobString += "\nEmployer: "+ employer;
-        }
-        if (location.toString().isEmpty()){
-            jobString += "\nLocation: Data not available";
-        }else{
-            jobString += "\nLocation: "+ location;
-        }
-        if (positionType.toString().isEmpty()){
-            jobString += "\nPosition Type: Data not available";
-        }else{
-            jobString += "\nPosition Type: "+ positionType;
-        }
-        if (coreCompetency.toString().isEmpty()){
-            jobString += "\nCore Competency: Data not available" + "\n";
-        }else{
-            jobString += "\nCore Competency: "+ coreCompetency + "\n";
-        }
-        return  jobString;
     }
 
     @Override
